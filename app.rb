@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'config/boot'
 require_relative 'routes/init'
 require_relative 'helpers/init'
 require_relative 'models/init'
@@ -14,6 +15,14 @@ class MyApp < Sinatra::Base
 
   configure :development do
     enable :logging, :dump_errors, :raise_errors
+
+    register Sinatra::Reloader
+
+    # dont_reload 'config/boot.rb'
+    also_reload 'app.rb'
+    also_reload 'helpers/**/*.rb'
+    also_reload 'models/**/*.rb'
+    also_reload 'routes/**/*.rb'
   end
 
   configure :qa do

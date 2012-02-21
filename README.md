@@ -1,10 +1,12 @@
-This is the source code for the sinatra-template project on github.  
-It's the basic structure I use for my Sinatra projects and it make things a bit more organized.  
+Forked from [https://github.com/oren/sinatra-template](https://github.com/oren/sinatra-template)
+
+This is the source code for the sinatra-template project on github.
+It's the basic structure I use for my Sinatra projects and it make things a bit more organized.
 
 What's inside?
 --------------
 
-* Modular Sinatra app version 1.3.2 using ruby 1.9.3-p125
+* Modular Sinatra app
 * minitest for unit-level tests
 * rack-test for routes tests
 * capybara + minitest for integration tests (no need for rspec)
@@ -16,16 +18,16 @@ Folders Structure
 
     app.rb         # require sinatra, vendor'd gems, models/init, routes/init, helpers/init
 
-    helpers/         
+    helpers/
       init.rb      # Require each helper file
       helper1.rb   # Related helper methods
 
-    models/          
+    models/
       init.rb      # Require each model, in controlled order
       user.rb      # model
       picture.rb   # model
 
-    routes/          
+    routes/
       init.rb      # Require each route, in controlled order
       user.rb      # One or more routes related to some feature
       admin.rb     # One or more routes related to administration
@@ -34,7 +36,7 @@ Folders Structure
       layout.erb   # Common layout
       index.erb    # Specific view
 
-    test/         
+    test/
       models       # minitest
       routes       # rack-test
       acceptance  # capybara + minitest
@@ -42,9 +44,9 @@ Folders Structure
 Setup
 -----
 
-Install Ruby 1.9.3 (if necessary). RVM is optional, but highly recommended
+Install Ruby 1.9.2 (if necessary). RVM is optional, but highly recommended
 
-    rvm install ruby-1.9.3-p125
+    rvm install ruby-1.9.2-p290
     git clone https://github.com/oren/sinatra-template.git
     cd sinatra-template (it will create sinatra-template gemset)
 
@@ -70,8 +72,12 @@ View all available rake commands
 
 Run the server
 
-    shotgun
+    bundle exec rackup
 
-Go to [http://127.0.0.1:9393](http://127.0.0.1:9393)
+Go to [http://127.0.0.1:9292](http://127.0.0.1:9292)
 
+IRB console testing
+
+    RACK_ENV=development irb
+    :001 > require './app'
 
