@@ -62,13 +62,13 @@ Install the gems
 
 View all available rake commands
 
-    rake -T
+    bundle exec rake -T
 
-    rake                  # Run all tests
-    rake test:acceptance  # Run acceptance tests
-    rake test:models      # Run models tests
-    rake test:routes      # Run routes tests
-    rake yard             # Generate YARD Documentation
+    bundle exec rake                  # Run all tests
+    bundle exec rake test:acceptance  # Run acceptance tests
+    bundle exec rake test:models      # Run models tests
+    bundle exec rake test:routes      # Run routes tests
+    bundle exec rake yard             # Generate YARD Documentation
 
 Run the server
 

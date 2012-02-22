@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "sinatra"
+gem "rake"
 
 group :development do
   gem "awesome_print"
@@ -12,5 +13,6 @@ end
 
 group :test do
   gem "capybara-webkit"
+  gem "minitest"
   gem "rack-test"
 end
