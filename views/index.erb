@@ -1,8 +1,8 @@
 <h2>This is a neat Sinatra template!</h2>
 
 <pre>
-This is the source code for the sinatra-template project on github.  
-It's the basic structure I use for my Sinatra projects and it make things a bit more organized.  
+This is the source code for the sinatra-template project on github.
+It's the basic structure I use for my Sinatra projects and it make things a bit more organized.
 
 What's inside?
 --------------
@@ -19,16 +19,16 @@ Folders Structure
 
     app.rb         # require sinatra, vendor'd gems, models/init, routes/init, helpers/init
 
-    helpers/         
+    helpers/
       init.rb      # Require each helper file
       helper1.rb   # Related helper methods
 
-    models/          
+    models/
       init.rb      # Require each model, in controlled order
       user.rb      # model
       picture.rb   # model
 
-    routes/          
+    routes/
       init.rb      # Require each route, in controlled order
       user.rb      # One or more routes related to some feature
       admin.rb     # One or more routes related to administration
@@ -37,7 +37,7 @@ Folders Structure
       layout.erb   # Common layout
       index.erb    # Specific view
 
-    test/         
+    test/
       models       # minitest
       routes       # rack-test
       interaction  # capybara + minitest
@@ -45,9 +45,9 @@ Folders Structure
 Setup
 -----
 
-Install Ruby 1.9.3 (if necessary). RVM is optional, but highly recommended
+Install Ruby 1.9.2 (if necessary). RVM is optional, but highly recommended
 
-    rvm install ruby-1.9.3-p125
+    rvm install ruby-1.9.2-p290
     git clone https://github.com/oren/sinatra-template.git
     cd sinatra-template (it will create sinatra-template gemset)
 
@@ -73,9 +73,14 @@ View all available rake commands
 
 Run the server
 
-    shotun
+bundle exec rackup
 
-Go to [http://127.0.0.1:9393](http://127.0.0.1:9393)
+Go to <a href="http://127.0.0.1:9292">http://127.0.0.1:9292</a>
+
+IRB console testing
+
+RACK_ENV=development irb
+:001 &gt; require './app'
 </pre>
 
 <p><%= @flash %><p>
