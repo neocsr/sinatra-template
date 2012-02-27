@@ -12,7 +12,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara-webkit"
+  gem "capybara"
   gem "minitest"
   gem "rack-test"
 end

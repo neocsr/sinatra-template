@@ -1,7 +1,7 @@
 require 'bundler'
 require 'logger'
 
-Bundler.require(ENV['RACK_ENV'].to_sym)
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
 # Setup Logger
 AppLogger = Logger.new($stdout)
