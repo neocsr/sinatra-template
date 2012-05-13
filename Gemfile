@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem "sinatra"
 gem "rake"
+gem "json"
 
 group :development do
   gem "awesome_print"

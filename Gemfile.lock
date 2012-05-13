@@ -99,6 +99,7 @@ DEPENDENCIES
   awesome_print
   capybara
   cucumber
+  json
   rack-test
   rake
   rdiscount
