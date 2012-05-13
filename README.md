@@ -16,51 +16,49 @@ What's inside?
 Folders Structure
 ------------------
 
-    app.rb         # require sinatra, models/init, routes/init, helpers/init
+    app.rb          # require sinatra, models/init, routes/init, helpers/init
 
     config/
-      boot.rb      # bundler setup
+      boot.rb       # bundler setup
 
     helpers/
-      init.rb      # Require each helper file
-      helper1.rb   # Related helper methods
+      init.rb       # Require each helper file
+      api_helper.rb # Related helper methods
 
     models/
-      init.rb      # Require each model, in controlled order
-      user.rb      # model
-      picture.rb   # model
+      init.rb       # Require each model, in controlled order
+      user.rb       # model
 
     routes/
-      init.rb      # Require each route, in controlled order
-      user.rb      # One or more routes related to some feature
-      admin.rb     # One or more routes related to administration
+      init.rb       # Require each route, in controlled order
+      api.rb        # One or more routes related to some feature
 
     views/
-      layout.erb   # Common layout
-      index.erb    # Specific view
+      layout.erb    # Common layout
+      index.erb     # Specific view
 
     spec/
-      models       # rspec
-      routes       # rack-test
+      models        # rspec
+      routes        # rspec and rack-test
 
-    features/      # cucumber and rspec
+    features/       # cucumber and rspec
 
 Setup
 -----
 
 Install Ruby 1.9.2 (if necessary). 'rvm' or 'rbenv' are optional, but highly recommended
 
-* rvm
+rvm
 
     rvm install ruby-1.9.2-p318
-    git clone git@git.corp.attinteractive.com:neocsr/sinatra-template.git
+    git clone git@github.com:neocsr/sinatra-template.git
     cd sinatra-template
 
-* rbenv
+rbenv
 
     rbenv install 1.9.2-p318
     rbenv rehash
-    git clone git@git.corp.attinteractive.com:neocsr/sinatra-template.git
+    git clone git@github.com:neocsr/sinatra-template.git
     cd sinatra-template
 
 Install bundler
@@ -69,7 +67,7 @@ Install bundler
 
 Install the gems
 
-    bundle install --without production staging
+    bundle install
 
 View all available rake commands
 
