@@ -69,6 +69,11 @@ Install the gems
 
     bundle install
 
+[Install and Start MongoDB](http://mongoid.org/docs/installation/configuration.html)
+
+    brew install mongodb (current version 2.0.2-x86_64)
+    mongod run --rest --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf
+
 View all available rake commands
 
     bundle exec rake -T
