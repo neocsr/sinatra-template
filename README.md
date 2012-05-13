@@ -9,9 +9,9 @@ What's inside?
 * Modular Sinatra app
 * rspec for unit-level tests
 * rack-test for routes tests
-* capybara + minitest for integration tests (no need for rspec)
+* cucumber and rspec
 * yard for documentation
-* Rakefile, Gemfile, .rvmrc, .gitignore
+* Rakefile, Gemfile, .rvmrc, .gitignore, .autotest, .rspec
 
 Folders Structure
 ------------------

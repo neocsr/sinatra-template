@@ -1,30 +1,37 @@
-require 'rake/testtask'
+require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
 require 'yard'
 
-task :default => [:'']
+task :default => [:rspec, :cucumber]
 
 desc "Run all tests"
-task :'' do
-  test_task = Rake::TestTask.new("alltests") do |t|
-    t.test_files = Dir.glob(File.join("test", "**", "*_test.rb"))
-  end
-  task("alltests").execute
+RSpec::Core::RakeTask.new(:rspec) do |spec|
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rspec_opts = ['-cfs --backtrace']
+end
+
+desc "Run cucumber tests"
+Cucumber::Rake::Task.new(:cucumber) do |t|
+  t.cucumber_opts = "features --format pretty"
 end
 
 namespace :test do
   desc "Run models tests"
-  task :models do
-    ruby "test/models/*_test.rb"
+  RSpec::Core::RakeTask.new(:models) do |spec|
+    spec.pattern = 'spec/models/*_spec.rb'
+    spec.rspec_opts = ['-cfs --backtrace']
   end
 
   desc "Run routes tests"
-  task :routes do
-    ruby "test/routes/*_test.rb"
+  RSpec::Core::RakeTask.new(:routes) do |spec|
+    spec.pattern = 'spec/routes/*_spec.rb'
+    spec.rspec_opts = ['-cfs --backtrace']
   end
-  
-  desc "Run acceptance tests"
-  task :acceptance do
-    ruby "test/acceptance/*_test.rb"
+
+  desc "Run all specs with code coverage"
+  task :coverage do
+    ENV['COVERAGE'] = 'true'
+    Rake::Task[:rspec].execute
   end
 end
 

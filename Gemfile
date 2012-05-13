@@ -16,6 +16,7 @@ group :test do
   gem "capybara"
   gem "cucumber"
   gem "rack-test", :require => "rack/test"
+  gem "simplecov"
   gem "ZenTest"
   gem "autotest-growl"
 end
