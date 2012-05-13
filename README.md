@@ -7,7 +7,7 @@ What's inside?
 --------------
 
 * Modular Sinatra app
-* minitest for unit-level tests
+* rspec for unit-level tests
 * rack-test for routes tests
 * capybara + minitest for integration tests (no need for rspec)
 * yard for documentation
@@ -16,7 +16,10 @@ What's inside?
 Folders Structure
 ------------------
 
-    app.rb         # require sinatra, vendor'd gems, models/init, routes/init, helpers/init
+    app.rb         # require sinatra, models/init, routes/init, helpers/init
+
+    config/
+      boot.rb      # bundler setup
 
     helpers/
       init.rb      # Require each helper file
@@ -36,21 +39,29 @@ Folders Structure
       layout.erb   # Common layout
       index.erb    # Specific view
 
-    test/
-      models       # minitest
+    spec/
+      models       # rspec
       routes       # rack-test
-      acceptance  # capybara + minitest
+
+    features/      # cucumber and rspec
 
 Setup
 -----
 
-Install Ruby 1.9.2 (if necessary). RVM is optional, but highly recommended
+Install Ruby 1.9.2 (if necessary). 'rvm' or 'rbenv' are optional, but highly recommended
 
-    rvm install ruby-1.9.2-p290
-    git clone https://github.com/oren/sinatra-template.git
-    cd sinatra-template (it will create sinatra-template gemset)
+* rvm
 
-[Install QT](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-QT) (needed for capybara-webkit)
+    rvm install ruby-1.9.2-p318
+    git clone git@git.corp.attinteractive.com:neocsr/sinatra-template.git
+    cd sinatra-template
+
+* rbenv
+
+    rbenv install 1.9.2-p318
+    rbenv rehash
+    git clone git@git.corp.attinteractive.com:neocsr/sinatra-template.git
+    cd sinatra-template
 
 Install bundler
 
@@ -65,9 +76,9 @@ View all available rake commands
     bundle exec rake -T
 
     bundle exec rake                  # Run all tests
-    bundle exec rake test:acceptance  # Run acceptance tests
-    bundle exec rake test:models      # Run models tests
-    bundle exec rake test:routes      # Run routes tests
+    bundle exec rake cucumber         # Run acceptance tests
+    bundle exec rake rspec:models     # Run models tests
+    bundle exec rake rspec:routes     # Run routes tests
     bundle exec rake yard             # Generate YARD Documentation
 
 Run the server
@@ -81,3 +92,6 @@ IRB console testing
     RACK_ENV=development irb
     :001 > require './app'
 
+TDD with RSpec and Autotest
+
+    bundle exec autotest

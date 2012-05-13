@@ -12,7 +12,10 @@ group :development do
 end
 
 group :test do
+  gem "rspec"
   gem "capybara"
-  gem "minitest"
-  gem "rack-test"
+  gem "cucumber"
+  gem "rack-test", :require => "rack/test"
+  gem "ZenTest"
+  gem "autotest-growl"
 end
