@@ -8,4 +8,8 @@ class MyApp < Sinatra::Base
     {:message => "ok"}.to_json
   end
 
+  get '/counter' do
+    {:count => Counter.increment}.to_json
+  end
+
 end

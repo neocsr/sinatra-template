@@ -3,6 +3,8 @@ source "http://rubygems.org"
 gem "sinatra"
 gem "rake"
 gem "json"
+gem "mongoid"
+gem "bson_ext"
 
 group :development do
   gem "awesome_print"
@@ -20,4 +22,5 @@ group :test do
   gem "simplecov"
   gem "ZenTest"
   gem "autotest-growl"
+  gem "mongoid-rspec"
 end
