@@ -1,1 +1,1 @@
-require_relative 'application_helper'
+require_relative 'api_helper'

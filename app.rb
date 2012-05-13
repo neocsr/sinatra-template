@@ -1,8 +1,5 @@
 require 'sinatra/base'
 require_relative 'config/boot'
-require_relative 'routes/init'
-require_relative 'helpers/init'
-require_relative 'models/init'
 
 class MyApp < Sinatra::Base
   enable :method_override
@@ -34,3 +31,9 @@ class MyApp < Sinatra::Base
     set :show_exceptions, false #true will ignore raise_errors and display backtrace in browser
   end
 end
+
+# To override properly
+require_relative 'routes/init'
+require_relative 'helpers/init'
+require_relative 'models/init'
+
